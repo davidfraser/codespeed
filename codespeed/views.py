@@ -378,6 +378,7 @@ def gettimelinedata(request):
         trunks = []
         if Branch.objects.filter(name=settings.DEF_BRANCH):
             trunks.append(settings.DEF_BRANCH)
+        trunks.extend(branch.name for branch in Branch.objects.all() if branch.name not in trunks)
         #for branch in data2.get('bran', '').split(','): #-- For now, we'll only work with trunk branches
         append = False
         for branch in trunks:
@@ -631,7 +632,7 @@ def changes(request):
     # Get lastest revisions for this project and it's "default" branch
     lastrevisions = Revision.objects.filter(
         branch__project=defaultexecutable.project,
-        branch__name=settings.DEF_BRANCH
+        # branch__name=settings.DEF_BRANCH
     ).order_by('-date')[:revlimit]
     if not len(lastrevisions):
         return no_data_found(request)
