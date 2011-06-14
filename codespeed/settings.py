@@ -2,12 +2,13 @@
 """Default settings for Codespeed"""
 
 ## General default options ##
-WEBSITE_NAME = "MySpeedSite" # This name will be used in the reports RSS feed
+WEBSITE_NAME = "j5" # This name will be used in the reports RSS feed
 
-DEF_ENVIRONMENT = None #Name of the environment which should be selected as default
+DEF_ENVIRONMENT = "jackdaw" #Name of the environment which should be selected as default
 
 
-DEF_BASELINE = None # Which executable + revision should be default as a baseline
+DEF_BASELINE = {'executable': 'me', 'revision': 'b807d538c725d85a9a525d15e023aa8cfe91da37'}
+                    # Which executable + revision should be default as a baseline
                     # Given as the name of the executable and commitid of the revision
                     # Example: defaultbaseline = {'executable': 'myexe', 'revision': '21'}
 
@@ -22,7 +23,7 @@ CHANGE_THRESHOLD = 3.0
 TREND_THRESHOLD  = 5.0
 
 ## Changes view options ##
-DEF_EXECUTABLE = None # Executable that should be chosen as default in the changes view
+DEF_EXECUTABLE = 'me' # Executable that should be chosen as default in the changes view
                       # Given as the name of the executable.
                       # Example: defaultexecutable = "myexe"
 
