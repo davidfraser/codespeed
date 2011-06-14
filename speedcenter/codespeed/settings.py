@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 ## General default options ##
-website_name = "MySpeedSite" # This name will be used in the reports RSS feed
+website_name = "j5" # This name will be used in the reports RSS feed
 
-def_environment = None #Name of the environment which should be selected as default
+def_environment = "jackdaw" #Name of the environment which should be selected as default
 
 
-def_baseline = None # Which executable + revision should be default as a baseline
+def_baseline = {'executable': 'me', 'revision': 'b807d538c725d85a9a525d15e023aa8cfe91da37'} # Which executable + revision should be default as a baseline
                     # Given as the name of the executable and commitid of the revision
                     # Example: defaultbaseline = {'executable': 'myexe', 'revision': '21'}
 
@@ -20,7 +20,7 @@ change_threshold = 3.0
 trend_threshold  = 5.0
 
 # Changes view options ##
-def_executable = None # Executable that should be chosen as default in the changes view
+def_executable = 'me' # Executable that should be chosen as default in the changes view
                       # Given as the id of the executable.
                       # Example: defaultexecutable = "myexe"
 
