@@ -11,6 +11,7 @@ BASEDIR = os.path.dirname(__file__)
 REPOSITORY_BASE_PATH = os.path.join(BASEDIR, "repos")
 
 ADMINS = (
+    'David Fraser', 'davidf@sjsoft.com',
     # ('Your Name', 'your_email@domain.com'),
 )
 
@@ -27,7 +28,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Africa/Johannesburg'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -54,7 +55,7 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'as%n_m#)^vee2pe91^^@c))sl7^c6t-9r8n)_69%)2yt+(la2&'
+SECRET_KEY = 'r+:6%e}+m)($xs81{#ru2_|ebd36_|qhp>hu[f|$t6d}-|d,}5'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -120,6 +121,7 @@ STATIC_ROOT = os.path.join(BASEDIR, "sitestatic")
 # Codespeed settings that can be overwritten here.
 ## General default options ##
 #WEBSITE_NAME = "MySpeedSite" # This name will be used in the reports RSS feed
+WEBSITE_NAME = "j5"
 
 #DEF_ENVIRONMENT = None #Name of the environment which should be selected as default
 
