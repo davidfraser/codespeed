@@ -7,7 +7,7 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
+
         # Renaming column for 'Revision.branch' to match new field type.
         db.rename_column('codespeed_revision', 'branch', 'branch_id')
         # Changing field 'Revision.branch'
@@ -18,7 +18,7 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        
+
         # Removing index on 'Revision', fields ['branch']
         db.delete_index('codespeed_revision', ['branch_id'])
 

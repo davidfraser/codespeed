@@ -216,7 +216,7 @@ def comparison(request):
 
     # Check whether there exist appropiate executables
     if not getdefaultexecutable():
-        return no_executables_error()
+        return no_executables_error(request)
 
     executables, exekeys = getcomparisonexes()
     checkedexecutables = []
@@ -301,7 +301,7 @@ def comparison(request):
         try:
             # TODO: Avoid calling twice getbaselineexecutables
             selectedbaseline = getbaselineexecutables()[1]['key']
-            # Uncheck exe used for normalization 
+            # Uncheck exe used for normalization
             try:
                 checkedexecutables.remove(selectedbaseline)
             except ValueError:
@@ -527,7 +527,7 @@ def timeline(request):
             defaultbenchmark = data['ben']
         else:
             defaultbenchmark = get_object_or_404(Benchmark, name=data['ben'])
-    
+
     if 'equid' in data:
         defaultequid = data['equid']
     else:
@@ -605,7 +605,7 @@ def changes(request):
 
     defaultexecutable = getdefaultexecutable()
     if not defaultexecutable:
-        return no_executables_error()
+        return no_executables_error(request)
 
     if "exe" in data:
         try:
@@ -797,7 +797,7 @@ def validate_result(item):
 
     # Check that the Environment exists
     try:
-        e = Environment.objects.get(name=item['environment'])
+        e, created = Environment.objects.get_or_create(name=item['environment'])
         error = False
         return e, error
     except Environment.DoesNotExist:
